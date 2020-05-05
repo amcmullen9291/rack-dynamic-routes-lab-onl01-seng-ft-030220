@@ -21,4 +21,3 @@ class Application < Item
   end
 end
 
-end
