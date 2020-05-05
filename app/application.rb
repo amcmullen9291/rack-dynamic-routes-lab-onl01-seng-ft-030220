@@ -6,11 +6,11 @@ class Application < Item
     req = Rack::Request.new(env)
     if req.path.match(/items/)
   	  item_name = req.path.split("/item/").last 
-  	  @@items.find{|s| s.name == item_name}
+  	  @@item.find{|s| s.name == item_name}
   	  resp.write item.name 
       resp.write item.price
       resp.status = 200
-    elsif @@items.excelude?(item_name)
+    elsif @@item.excelude?(item_name)
       resp.status = 400
       resp.write" Item not found"
     else
