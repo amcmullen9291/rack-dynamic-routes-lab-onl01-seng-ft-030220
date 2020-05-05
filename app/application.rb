@@ -2,6 +2,9 @@ require_relative 'item'
 class Application
   @@search << Item.all
   
+  def initialize 
+  end 
+  
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
