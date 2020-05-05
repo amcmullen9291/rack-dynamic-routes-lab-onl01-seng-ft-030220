@@ -1,5 +1,5 @@
 class Application < Item
-  @items = Item.
+  @search = Item.item
   
   def call(env)
     resp = Rack::Response.new
