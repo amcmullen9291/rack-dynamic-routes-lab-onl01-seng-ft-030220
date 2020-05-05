@@ -1,3 +1,4 @@
+require_relative 'Item'
 class Application < Item
   @search = Item.item
   
