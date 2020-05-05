@@ -1,6 +1,6 @@
 class Item
   attr_accessor :name, :price
-@@item = []
+@@all = []
   def initialize(name,price)
     @name = name
     @price = price
