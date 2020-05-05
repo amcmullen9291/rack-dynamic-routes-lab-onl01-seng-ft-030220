@@ -1,13 +1,13 @@
 require_relative 'item'
 class Application < Item
-  @search = Item.item
+  @@search = Item.item
   
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     if req.path.include?(/items/)
   	  item_name = req.path.split("/item/").last 
-  	  item = @search.find{|s| s.name == item_name}
+  	  item = @@search.find{|s| s.name == item_name}
   	  if item 
         resp.write item.price
         resp.status = 200
