@@ -1,7 +1,7 @@
+require_relative 'item'
 class Application
   
-@@songs = [Song.new("Sorry", "Justin Bieber"),
-Song.new("Hello","Adele")]
+@@songs << 
 
   def call(env)
     resp = Rack::Response.new
