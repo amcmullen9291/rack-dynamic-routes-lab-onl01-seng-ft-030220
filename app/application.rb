@@ -1,8 +1,9 @@
 require_relative 'item'
 class Application
-  @@search << Item.all
+  @@search = []
   
   def initialize 
+    @@search << Item.all
   end 
   
   def call(env)
