@@ -1,9 +1,9 @@
 require_relative 'item'
 class Application
-  @@search = []
+  @@item = []
   
   def initialize 
-    @@search << Item.all
+    @@item << Item.all
   end 
   
   def call(env)
@@ -11,7 +11,7 @@ class Application
     req = Rack::Request.new(env)
     if req.path.include?("/items/")
   	  item_name = req.path.split("/item/").last 
-  	   @@search.find do |food| 
+  	   @@item.find do |food| 
   	    if food.name == item_name
           resp.write food.price
           resp.status = 200
