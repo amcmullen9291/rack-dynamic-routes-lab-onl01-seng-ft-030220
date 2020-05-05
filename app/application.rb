@@ -10,7 +10,7 @@ class Application
   	  resp.write item.name " is:"
       resp.write item.price
       resp.status = 200
-    elsif @@tiems.excelude?(item_name)
+    elsif @@items.excelude?(item_name)
       resp.status = 400
       resp.write" Item not found"
     else
