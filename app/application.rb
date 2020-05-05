@@ -7,7 +7,7 @@ class Application
     if req.path.match(/items/)
   	  item_name = req.path.split("/item/").last 
   	  @@items.find{|s| s.name == item_name}
-  	  resp.write item.name " is:"
+  	  resp.write item.name 
       resp.write item.price
       resp.status = 200
     elsif @@items.excelude?(item_name)
