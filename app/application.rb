@@ -1,5 +1,5 @@
 require_relative 'item'
-class Application < Item
+class Application
   @@search = Item.item
   
   def call(env)
