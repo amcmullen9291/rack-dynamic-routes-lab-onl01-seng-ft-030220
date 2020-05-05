@@ -7,7 +7,6 @@ class Application < Item
     if req.path.include?(/items/)
   	  item_name = req.path.split("/item/").last 
   	  item = @@item.find{|s| s.name == item_name}
-  	    resp.write item.name 
         resp.write item.price
         resp.status = 200
         if @@item.excelude?(item_name)
