@@ -1,7 +1,6 @@
 require_relative 'item'
 class Application
-  @@item = []
-  
+
   def initialize 
     @@item << Item.all
   end 
