@@ -11,13 +11,13 @@ class Application
     req = Rack::Request.new(env)
     if req.path.include?("/items/")
   	  item_name = req.path.split("/item/").last 
-  	  item = @@search.find{|s| s.name == item_name}
-  	  if item 
-        resp.write item.price
-        resp.status = 200
-      else
-        resp.status = 400
-        resp.write" Item not found"
+  	   @@search.find do |food| 
+  	    if food.name == item_name
+          resp.write food.price
+          resp.status = 200
+        else
+          resp.status = 400
+          resp.write" Item not found"
       end
     else
       resp.status = 404
