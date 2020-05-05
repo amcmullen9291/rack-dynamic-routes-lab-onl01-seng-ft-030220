@@ -1,6 +1,6 @@
 require_relative 'item'
 class Application
-  @@search = Item.item
+  @@search = Item.all
   
   def call(env)
     resp = Rack::Response.new
